@@ -5,7 +5,7 @@ frame:SetScript("OnEvent", function()
   ProfessionsFrame.CraftingPage.RecipeList.SearchBox:SetScript("OnTextChanged", function(self, isUserInput)
     SearchBoxTemplate_OnTextChanged(self)
     local text = self:GetText()
-    if isUserInput and not self:IsInIMECompositionMode() then
+    if not self:IsInIMECompositionMode() then
       ProfessionsFrame.CraftingPage.RecipeList.SearchBox:SetText(text);
       ProfessionsFrame.CraftingPage.MinimizedSearchBox:SetText(text);
       Professions.OnRecipeListSearchTextChanged(text);
@@ -14,7 +14,7 @@ frame:SetScript("OnEvent", function()
   ProfessionsFrame.CraftingPage.MinimizedSearchBox:SetScript("OnTextChanged", function(self, isUserInput)
     SearchBoxTemplate_OnTextChanged(self)
     local text = self:GetText()
-    if isUserInput and not self:IsInIMECompositionMode() then
+    if not self:IsInIMECompositionMode() then
       ProfessionsFrame.CraftingPage.RecipeList.SearchBox:SetText(text);
       ProfessionsFrame.CraftingPage.MinimizedSearchBox:SetText(text);
       Professions.OnRecipeListSearchTextChanged(text);
